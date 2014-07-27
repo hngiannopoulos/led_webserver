@@ -1,21 +1,62 @@
-<html><body><h1>It works!</h1>
-<p>This is the default web page for this server.</p>
-<p>The web server software is running but no content has been added, yet.</p>
+<html><body><h1>LED Table Controls</h1>
+
+<!-- 
+#define LEDS_OFF              'A'
+#define RAINBOW               'B'
+#define GAME_OF_LIFE          'C'
+#define SNAKE                 'D'
+#define SCROLL_TXT            'E'
+#define TEST                  'F'
+#define SET_COLOR             'G'
+ -->
+
+<!-- OFF              -->
 <form action="test.php" method="post">
-	<input type="color" name="favcolor">
-	<input type="text" name="example">
-	<input type="submit" value="Go">
+        <input type="hidden" name="table_command" value="A">
+        <input type="submit" name="Flash" value="Off" >
 </form>
+
+<!-- Rainbow              -->
+<form action="test.php" method="post">
+        <input type="hidden" name="table_command" value="B">
+        <input type="submit" name="Flash" value="Rainbow" >
+</form>
+
+<!-- Game Of Life              -->
+<form action="test.php" method="post">
+        <input type="hidden" name="table_command" value="C">
+        <input type="submit" name="Flash" value="Game Of Life" >
+</form>
+
+<!-- Text Scroll              -->
+<form action="test.php" method="post">
+        <input type="hidden" name="table_command" value="D">
+        <input type="text" name="message" value="Text To Scroll"> </br>
+        <input type="submit" name="Flash" value="Scroll Text" >
+</form>
+
+<!-- Text Scroll              -->
+<form action="test.php" method="post">
+        <input type="hidden" name="table_command" value="G">
+        <input type="text" name="message" value="Text To Scroll"></br>
+        <input type="submit" name="Flash" value="Set Color" >
+</form>
+
+
 </body></html>
 <style>
+input[type=text] {
+		width: 15em;
+
+}
 
 input[type=color] {
-	width: 10em;
-	height 5em;
+        width: 15em;
+        height 5em;
 }
 input[type=submit] {
-	width: 30em; height: 5em;
-	font-family: "Sans-serif";
-	font-size: 20px;
+        width: 15em; height: 3em;
+        font-family: "Sans-serif";
+        font-size: 15px;
 }
 </style>
